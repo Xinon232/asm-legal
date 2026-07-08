@@ -1,10 +1,13 @@
-# Another Stupid Monday Legal
+# asm-legal
 
-Static legal pages for Another Stupid Monday.
+Static legal/support pages and Halim Jarrar profile site.
 
-Target URLs after domain routing:
+Current GitHub Pages custom domain: https://asm.halim-jarrar.de/
 
-- `https://asm.halim-jarrar.de/privacy/`
-- `https://asm.halim-jarrar.de/terms/`
+Main pages:
 
-Support email: `monday@halim-jarrar.de`
+- `/` Halim Jarrar profile site (DE)
+- `/en/` English version
+- `/impressum/` Impressum
+- `/datenschutz/` Datenschutz
+- Existing ASM app legal/support paths remain in `/asm/`, `/terms/`, `/support/` where present.
