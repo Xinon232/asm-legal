@@ -1,41 +1,151 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Halim Jarrar — Psychotherapeutic online group sessions and mental health app development.">
-  <meta name="author" content="Halim Jarrar">
-  <title>Halim Jarrar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Another Stupid Monday: one small thing to do each week, starting every Monday.">
+  <meta name="theme-color" content="#f5f0e7">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Another Stupid Monday">
+  <meta property="og:description" content="One small thing to do each week. Starting every Monday.">
+  <meta property="og:url" content="https://asm.halim-jarrar.de/">
+  <meta property="og:image" content="https://asm.halim-jarrar.de/assets/app-icon.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Another Stupid Monday">
+  <meta name="twitter:description" content="One small thing to do each week. Starting every Monday.">
+  <meta name="twitter:image" content="https://asm.halim-jarrar.de/assets/app-icon.jpg">
+  <title>Another Stupid Monday</title>
   <style>
-:root{--bg:#fafafa;--card:#fff;--text:#333;--muted:#666;--line:#e8e2da;--blue:#007bff;--blue2:#0056b3;--green:#28a745;--shadow:0 4px 20px rgba(0,0,0,.10)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;max-width:800px;margin:0 auto;padding:2rem;line-height:1.6;color:var(--text);background:var(--bg)}
-header,section,footer{background:var(--card);padding:2rem;border-radius:12px;box-shadow:var(--shadow);margin:0 0 1.5rem}header{text-align:center;padding:3rem 2rem}.avatar{width:150px;height:150px;border-radius:50%;margin:0 auto 1rem;display:grid;place-items:center;background:linear-gradient(135deg,#eef5ff,#fff4e8);border:1px solid var(--line);font-size:3rem;color:#444}h1{font-size:2.5rem;margin:0 0 .5rem;color:#1a1a1a;line-height:1.1}h2{font-size:1.45rem;margin:0 0 1rem;color:#1a1a1a}h3{font-size:1.08rem;margin:1.4rem 0 .4rem}.subtitle{font-size:1.2rem;color:var(--muted);margin:0 0 1.5rem}.desc{font-size:1.08rem;max-width:640px;margin:0 auto 1rem}.links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem}.links a,.button{background:var(--blue);color:white;padding:.8rem 1.5rem;text-decoration:none;border-radius:6px;transition:background .2s}.links a:hover,.button:hover{background:var(--blue2)}a{color:var(--blue2)}.meta{color:var(--muted);font-size:.95rem}.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.notice{border-left:4px solid var(--green);padding:1rem;background:#f7fff9;border-radius:8px}.legal p,.legal li{font-size:.98rem}.legal ul{padding-left:1.2rem}.topnav{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin-bottom:1rem}.lang{font-size:.95rem}footer{text-align:center;color:var(--muted);font-size:.95rem}@media(max-width:600px){body{padding:1rem}header{padding:2rem 1rem}.two{grid-template-columns:1fr}h1{font-size:2rem}}
-</style>
+    :root {
+      --ivory:#f5f0e7; --paper:#fffdf8; --ink:#20201d; --muted:#67645d;
+      --clay:#c96548; --clay-dark:#a84f37; --olive:#748557; --line:#ddd4c6;
+      --shadow:0 20px 70px rgba(54,42,28,.12); --serif:Georgia,"Times New Roman",serif;
+      --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--ivory); font:16px/1.6 var(--sans); -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    .wrap { width:min(1120px,calc(100% - 40px)); margin:auto; }
+    .nav { height:82px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:11px; text-decoration:none; font-weight:750; letter-spacing:-.025em; }
+    .brand img { width:38px; height:38px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,.15); }
+    .nav-links { display:flex; align-items:center; gap:22px; color:var(--muted); font-size:.9rem; }
+    .nav-links a { text-decoration:none; }
+    .nav-links a:hover { color:var(--clay-dark); }
+    .hero { display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:52px; min-height:calc(100vh - 82px); padding:68px 0 100px; }
+    .eyebrow { color:var(--olive); font-size:.71rem; letter-spacing:.15em; font-weight:800; text-transform:uppercase; }
+    h1,h2 { font-family:var(--serif); font-weight:500; letter-spacing:-.045em; line-height:.98; }
+    h1 { max-width:650px; margin:16px 0 24px; font-size:clamp(3.5rem,7vw,6.9rem); }
+    h1 em { color:var(--clay); font-style:italic; }
+    .lede { max-width:540px; margin:0 0 30px; color:var(--muted); font-size:clamp(1.08rem,1.7vw,1.28rem); }
+    .buttons { display:flex; flex-wrap:wrap; gap:13px; align-items:center; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:0 22px; border-radius:9px; text-decoration:none; font-weight:750; transition:transform .18s,background .18s; }
+    .button:hover { transform:translateY(-2px); }
+    .primary { background:var(--ink); color:#fff; box-shadow:0 10px 24px rgba(32,32,29,.2); }
+    .primary:hover { background:var(--clay-dark); }
+    .subnote { margin:13px 0 0; color:var(--muted); font-size:.87rem; }
+    .phone-scene { position:relative; min-height:560px; display:grid; place-items:center; }
+    .sun { position:absolute; width:360px; height:360px; border-radius:50%; background:#e7c19d; filter:blur(.2px); opacity:.72; transform:translate(24px,-18px); }
+    .phone { position:relative; width:min(294px,75vw); padding:10px; border:8px solid #24231f; border-radius:42px; background:#24231f; box-shadow:0 35px 65px rgba(55,39,24,.3); transform:rotate(4deg); }
+    .screen { overflow:hidden; min-height:515px; border-radius:26px; padding:26px 22px; background:linear-gradient(155deg,#fff9eb,#f2d7bd 82%); }
+    .notch { width:100px; height:20px; margin:-26px auto 27px; border-radius:0 0 13px 13px; background:#24231f; }
+    .screen-label { color:#746858; font-size:.72rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .screen h3 { margin:16px 0 20px; font:500 2.35rem/.98 var(--serif); letter-spacing:-.04em; }
+    .task { padding:19px; border:1px solid rgba(76,59,37,.17); border-radius:16px; background:rgba(255,253,248,.76); box-shadow:0 10px 24px rgba(96,66,36,.09); }
+    .task small { color:#827260; font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .task p { margin:9px 0 0; font-size:1.04rem; line-height:1.35; }
+    .dots { display:flex; gap:7px; margin:28px 0 0; }
+    .dots i { width:7px; height:7px; border-radius:50%; background:#d1bda5; } .dots i:first-child { width:24px; border-radius:9px; background:var(--clay); }
+    .stamp { position:absolute; right:0; bottom:48px; padding:9px 13px; border:1px solid var(--line); border-radius:99px; background:var(--paper); color:var(--muted); font-size:.76rem; transform:rotate(-4deg); box-shadow:0 8px 22px rgba(54,42,28,.08); }
+    .rule { border:0; border-top:1px solid var(--line); margin:0; }
+    .intro { display:grid; grid-template-columns:.78fr 1.22fr; gap:52px; padding:112px 0; }
+    h2 { margin:0; font-size:clamp(2.5rem,4.5vw,4.4rem); }
+    .intro p { max-width:620px; margin:0; font-size:1.15rem; color:var(--muted); }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding:0 0 112px; }
+    .step { min-height:220px; padding:25px; border:1px solid var(--line); border-radius:16px; background:var(--paper); }
+    .num { color:var(--clay); font:italic 2.2rem/1 var(--serif); }
+    .step h3 { margin:38px 0 8px; font:500 1.36rem/1.15 var(--serif); letter-spacing:-.02em; }
+    .step p { margin:0; color:var(--muted); font-size:.94rem; }
+    .quote { padding:105px 0; background:var(--ink); color:#f7f0e7; }
+    .quote .wrap { max-width:900px; text-align:center; }
+    .quote blockquote { margin:16px 0 20px; font:500 clamp(2.25rem,5vw,4.5rem)/1.02 var(--serif); letter-spacing:-.04em; }
+    .quote p { margin:0; color:#c8c0b5; }
+    .about { display:grid; grid-template-columns:1fr 1fr; gap:72px; padding:112px 0; }
+    .about-copy { color:var(--muted); font-size:1.05rem; }
+    .about-copy p:first-child { margin-top:0; }
+    .note { align-self:start; padding:25px; border-left:4px solid var(--olive); border-radius:0 12px 12px 0; background:#eaf0df; color:#4d593c; }
+    .note strong { display:block; margin-bottom:8px; color:#344027; }
+    .download { padding:86px 0 92px; text-align:center; background:#ead4bb; }
+    .download h2 { margin:12px auto 18px; max-width:720px; }
+    .download p { max-width:540px; margin:0 auto 26px; color:#665d52; }
+    footer { padding:32px 0; color:var(--muted); font-size:.86rem; }
+    .footer-row { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    .footer-row a { text-decoration:none; } .footer-row a:hover { color:var(--clay-dark); }
+    @media (max-width:760px) {
+      .wrap { width:min(100% - 32px,620px); } .nav { height:68px; } .nav-links { gap:0; font-size:.82rem; } .nav-links a:not(:last-child) { display:none; }
+      .hero { grid-template-columns:1fr; gap:25px; min-height:auto; padding:52px 0 72px; } .phone-scene { min-height:470px; order:-1; } .sun { width:285px;height:285px; }
+      .intro,.about { grid-template-columns:1fr; gap:26px; padding:78px 0; } .steps { grid-template-columns:1fr; padding-bottom:78px; } .step { min-height:0; } .step h3 { margin-top:24px; }
+      .quote { padding:76px 0; } .download { padding:72px 0; } .stamp { right:4px; bottom:18px; }
+    }
+  </style>
 </head>
 <body>
+  <main>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="Another Stupid Monday home"><img src="assets/app-icon.jpg" alt="Another Stupid Monday app icon">Another Stupid Monday</a>
+      <div class="nav-links"><a href="#how-it-works">How it works</a><a href="#about">About</a><a href="#download">Download</a></div>
+    </nav>
 
-<header>
-  <div class="topnav"><span></span><span class="lang"><strong>Deutsch</strong> · <a href="en/">English</a></span></div>
-  <div class="avatar" aria-hidden="true">HJ</div>
-  <h1>Halim Jarrar</h1>
-  <p class="subtitle">Psychologischer Psychotherapeut · Online-Gruppensitzungen · Mental-Health-Apps</p>
-  <p class="desc">Ich bin Psychotherapeut und biete psychotherapeutische Gruppensitzungen online an. Neben meiner therapeutischen Arbeit entwickle ich digitale Anwendungen im Bereich Mental Health, Selbstreflexion und psychisches Wohlbefinden.</p>
-  <div class="links">
-    <a href="mailto:psychotherapie@halim-jarrar.de">E-Mail</a>
-    <a href="impressum/">Impressum</a>
-    <a href="datenschutz/">Datenschutz</a>
-  </div>
-</header>
-<section>
-  <h2>Online-Praxis</h2>
-  <p>Meine psychotherapeutische Arbeit findet online über datenschutzkonforme Videosprechstunden statt. Vor Beginn wird geprüft, ob das Online-Setting im jeweiligen Einzelfall fachlich geeignet ist.</p>
-</section>
-<section>
-  <h2>Apps & digitale Projekte</h2>
-  <p>Zusätzlich entwickle ich Mental-Health-Apps als begleitende, niedrigschwellige Angebote für Selbstfürsorge, Reflexion und alltagsnahe Übungen. Diese Apps ersetzen keine Psychotherapie, Diagnose, Behandlung oder Krisenhilfe.</p>
-</section>
-<footer>
-  <p>© Halim Jarrar · <a href="impressum/">Impressum</a> · <a href="datenschutz/">Datenschutz</a> · <a href="en/">English</a></p>
-</footer>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">A weekly companion</div>
+        <h1 id="hero-title">One small thing.<br>Every <em>Monday.</em></h1>
+        <p class="lede">Another Stupid Monday gives you one small task to do each week. No pressure to catch up. No race to finish. Just one gentle next step.</p>
+        <div class="buttons">
+          <a class="button primary" href="https://apps.apple.com/us/app/another-stupid-monday/id6782894277" aria-label="Download Another Stupid Monday on the App Store">Download on the App Store</a>
+        </div>
+        <p class="subnote">Your first Monday is free. Available for iPhone and iPad.</p>
+      </div>
+      <div class="phone-scene" aria-label="A preview of an Another Stupid Monday weekly task">
+        <div class="sun" aria-hidden="true"></div>
+        <div class="phone">
+          <div class="screen">
+            <div class="notch" aria-hidden="true"></div>
+            <div class="screen-label">This week</div>
+            <h3>One small<br>thing.</h3>
+            <div class="task"><small>Your task</small><p>Choose one person and send them a short message.</p></div>
+            <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <span class="stamp">No streaks. No guilt.</span>
+      </div>
+    </section>
+
+    <hr class="rule">
+    <section class="intro wrap" id="how-it-works" aria-labelledby="how-title">
+      <div><div class="eyebrow">How it works</div><h2 id="how-title">A slower kind of progress.</h2></div>
+      <p>There are 100 tasks in the journey, but you never need to think about all of them. The point is not to finish quickly. The point is to do what is in front of you this week.</p>
+    </section>
+    <section class="steps wrap" aria-label="Three steps">
+      <article class="step"><div class="num">01</div><h3>Monday arrives</h3><p>A new small task is waiting for you at the start of the week.</p></article>
+      <article class="step"><div class="num">02</div><h3>Take your time</h3><p>Check in during the week. Do it in your own way and at your own pace.</p></article>
+      <article class="step"><div class="num">03</div><h3>Move on when ready</h3><p>Complete the task to continue. If not, it stays with you—without punishment.</p></article>
+    </section>
+
+    <section class="quote"><div class="wrap"><div class="eyebrow">The idea</div><blockquote>“Monday is coming anyway.<br>You only need one small thing.”</blockquote><p>Small helpful actions can be easier to begin—and to return to—than trying to change everything at once.</p></div></section>
+
+    <section class="about wrap" id="about" aria-labelledby="about-title">
+      <div><div class="eyebrow">Made with care</div><h2 id="about-title">Created by a real psychotherapist.</h2></div>
+      <div class="about-copy">
+        <p>The tasks, their order, and the small dialogues around them are crafted by Halim Jarrar, psychotherapist.</p>
+        <p>Another Stupid Monday is a companion for self-reflection and everyday wellbeing. It is not a substitute for psychotherapy, diagnosis, treatment, or crisis support.</p>
+        <aside class="note"><strong>There is no falling behind.</strong>If a task is unfinished, it simply remains there. Start where you are.</aside>
+      </div>
+    </section>
+
+    <section class="download" id="download"><div class="wrap"><div class="eyebrow">Start with one Monday</div><h2>Good luck on your journey.</h2><p>Download Another Stupid Monday today. Your first weekly task is free.</p><a class="button primary" href="https://apps.apple.com/us/app/another-stupid-monday/id6782894277">Download on the App Store</a></div></section>
+  </main>
+  <footer><div class="wrap footer-row"><span>© 2026 Halim Jarrar</span><span><a href="privacy/">Privacy</a> · <a href="terms/">Terms</a> · <a href="support/">Support</a></span></div></footer>
 </body>
 </html>
